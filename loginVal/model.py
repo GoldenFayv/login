@@ -54,8 +54,7 @@ def check_username(user_name):
 def check_users():
 	connection = sqlite3.connect('database.db', check_same_thread = False)
 	corsor = connection.cursor()
-	# connection.row_factory = sqlite3.Row
-	corsor.execute("SELECT username FROM Users ORDER BY id ASC;")
+	corsor.execute("SELECT username FROM Users ORDER BY id;")
 	db_users = corsor.fetchall()
 	users = []
 
