@@ -1,0 +1,24 @@
+{% extends "home2.html" %}
+{% block title %}Home{% endblock %}
+
+           
+
+{% block content %}
+<style>
+    a{
+        color: blue;
+    }
+</style>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p class="bg-grey text-success">{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <h1>Welcome to my CRUD website</h1>
+    <p>To start making use of this website, we'll urge you to <a href="/login">log in</a> if you have an account with us, else <a href="/signup"> sign up</a></p>
+{% endblock content %}
+  

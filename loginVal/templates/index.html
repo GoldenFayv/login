@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+</head>
+
+<style>
+  .nav-item:hover{
+    border: 5px solid green;
+    border-radius: 15px;
+    background-color: white;
+    /* margin-left: 10px; */
+  }
+  .row1 div{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* padding-right: 30px; */
+    /* color: #ffff; */
+    background-color: gray;
+    /* border: 2px solid grey; */
+  }
+  .row1 div:hover{
+    background-color: none;
+    border-radius: 15px;
+    
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  a:hover{
+    color: teal;
+  }
+</style>
+
+<body style="background-color: antiquewhite;">
+    <div class="container-fuid">
+        <nav class="navbar navbar-expand-sm navbar-light bg-secondary">
+            <a href="#" class="navbar-brand" style="font-size: 30px; color:antiquewhite";>
+              <img src="/static/img/crud2.png" alt="Logo" width="50" height="40" class="d-inline-block align-top">
+              CRUD</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false" aria-labele="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="toggleMobileMenu">
+              <!-- <ul class="navbar-nav">
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+              </ul> -->
+              <!-- <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="/" class="nav-link">Dashbord</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+              </ul> -->
+              <ul class="navbar-nav ms-5">
+                <li class="nav-item"><a href="/signup" class="nav-link">Sign Up</a></li>
+
+
+                {% if 'username' in session %}
+                  <li class="nav-item"><a href="/logout" class="nav-link">Log out</a></li>
+                {% else %}
+                  <li class="nav-item"><a href="/login" class="nav-link">Log in</a></li>
+                {% endif %}
+
+
+
+
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </div>
+
+    {% block content %}
+      <h1>{{msg}}</h1>
+    {% endblock content %}
+
+
+
+</body>
+</html>

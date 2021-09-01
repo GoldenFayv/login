@@ -1,0 +1,90 @@
+{% extends "home2.html" %}
+
+{% block content %}
+<style>
+    form{
+        margin: 8%;
+        padding: 4rem 1rem 4rem 1rem;
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, .05);
+    }
+    .form-control{
+        display: block;
+        width: 100%;
+        line-height: 1.5rem;
+        border-color: #00ac96 !important;
+        border-style: solid !important;
+        border-bottom: none;
+        /* padding: 0px !important; */
+        color: #495057;
+        height: auto;
+        background-clip: padding-box;
+        
+    }
+    .form-control:focus{
+        background-color: rgba(67, 123, 133, 0.301);
+        color: white;
+        background-color: rgb(130, 116, 182);
+        border-color: #fff;
+        box-shadow: none;
+        outline: 0;
+    }
+
+</style>
+
+
+
+
+    <center class="mt-5">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for msg in messages %}
+            <p class="bg-grey text-success">{{msg}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </center>
+
+
+   <br> <div class="container form-signin bg-mute" style="max-width: 50%;">
+        <form action="#" method="post">
+            <center>
+                <br><img class="mb-4" src="/static/img/profilepic.png" alt="" width="72" height="57">
+                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+            
+                <div class="form-group">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="u_login">
+                    <!-- <label for="floatingInput">Username</label> -->
+                </div><br>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="p_login">
+                    <!-- <label for="floatingPassword">Password</label> -->
+                </div>
+            
+                <div class="form-group form-check mb-3">
+                    <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="w-50 btn btn-md btn-secondary" type="submit">Log in</button>
+
+                
+                <p class="text-success"><em>{{ msg }}</em></p>
+                <p><a href="/admin_login"><u>Admin Log in</u></a></p>
+                <p><a href="#"><u>Forgotten password?</u></a></p>
+                <p>Dont have an account? <a href="/signup"><u>Sign up here!</u></a></p>
+                <p class="mt-3 mb-3 text-muted">&copy; 2021</p>
+            </center>
+            
+        </form>
+
+    </div>
+
+
+
+
+    
+
+{% endblock %}
+
+
+
